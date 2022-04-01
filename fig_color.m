@@ -79,7 +79,7 @@ y = F(xs);
 lm = mLM(F, y); % modified LM
 W = mW(F, y);
 dfl_opts.maxiter = 500; % follows the paper 
-dfL = KW(F, y, dfl_opts); % approximate Landweber 
+dfL = aL(F, y, dfl_opts); % approximate Landweber 
 
 
 addpath('./export_fig');
