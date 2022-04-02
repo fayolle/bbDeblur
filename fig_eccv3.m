@@ -103,7 +103,7 @@ lm = im2double(imread('barbara_face_LM_100_eccv3ker_nvar10m5.png'));
 iW = im2double(imread('barbara_face_iW_100_eccv3ker_nvar10m5.png'));
 T = im2double(imread('barbara_face_Tpc_100_eccv3ker_nvar10m5.png'));
 dfL = im2double(imread('barbara_face_dfL_500_eccv3ker_nvar10m5.png'));
-mRL = im2double(imread('barbara_face_mRL_500_eccv3ker_nvar10m5.png'));
+mrl = im2double(imread('barbara_face_mRL_500_eccv3ker_nvar10m5.png'));
 
 
 chin = imcrop(y, [210 320 190 110]);
