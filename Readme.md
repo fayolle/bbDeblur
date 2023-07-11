@@ -15,7 +15,7 @@ Link to the [paper](https://www.sciencedirect.com/science/article/pii/S092359652
 ```
 @article{Belyaev2022,
 title = {Black-box image deblurring and defiltering},
-author = {Alexander G. Belyaev and Pierre-Alain Fayolle},
+author = {Belyaev, Alexander G. and Fayolle, Pierre-Alain},
 journal = {Signal Processing: Image Communication},
 pages = {116833},
 year = {2022},
