@@ -26,19 +26,6 @@ NSR = noise_var / signal_var;
 g = @(x) deconvwnr(x,h,NSR);
 W = g(y); 
 
-% deconv tv
-addpath('./sota_comparisons/non_blind/deconvtv_v1');
-% parameters
-opts.rho_r   = 2;
-opts.beta    = [1 1 0];
-opts.print   = true;
-opts.alpha   = 0.7;
-opts.method  = 'l2';
-mu           = 10000;
-% end of parameters
-tvs = deconvtv(y, h, mu, opts);
-tv = tvs.f;
-
 
 lm = mLM(F, y); % modified LM
 T = pcVC(F, y); % corrected VC 
@@ -59,11 +46,6 @@ figure();
 imshow(W);
 export_fig -m2 barbara_face_Wiener_eccv3ker_nvar10m5.png;
 fprintf("PSNR of Wiener: %f\n", psnr(W, xs));
-
-figure();
-imshow(tv);
-export_fig -m2 barbara_face_tv_10K_eccv3ker_nvar10m5.png;
-fprintf("PSNR of TV: %f\n", psnr(tv, xs));
 
 figure();
 imshow(lm);
@@ -98,7 +80,6 @@ clear;
 % read images saved with x2 resolution 
 y = im2double(imread('barbara_face_eccv3ker_nvar10m5.png'));
 W = im2double(imread('barbara_face_Wiener_eccv3ker_nvar10m5.png'));
-tv = im2double(imread('barbara_face_tv_10K_eccv3ker_nvar10m5.png'));
 lm = im2double(imread('barbara_face_LM_100_eccv3ker_nvar10m5.png'));
 iW = im2double(imread('barbara_face_iW_100_eccv3ker_nvar10m5.png'));
 T = im2double(imread('barbara_face_Tpc_100_eccv3ker_nvar10m5.png'));
@@ -108,7 +89,6 @@ mrl = im2double(imread('barbara_face_mRL_500_eccv3ker_nvar10m5.png'));
 
 chin = imcrop(y, [210 320 190 110]);
 chinW = imcrop(W, [210 320 190 110]);
-chinTV = imcrop(tv, [210 320 190 110]);
 chinLM = imcrop(lm, [210 320 190 110]);
 chinIW = imcrop(iW, [210 320 190 110]);
 chinT = imcrop(T, [210 320 190 110]);
@@ -123,10 +103,6 @@ export_fig barbara_face_chin_eccv3ker_nvar10m5.png;
 figure();
 imshow(chinW);
 export_fig barbara_face_chin_Wiener_eccv3ker_nvar10m5.png;
-
-figure();
-imshow(chinTV);
-export_fig barbara_face_chin_tv_10K_eccv3ker_nvar10m5.png;
 
 figure();
 imshow(chinLM);
@@ -152,7 +128,6 @@ export_fig barbara_face_chin_mRL_500_eccv3ker_nvar10m5.png;
 % Eyes
 eyes = imcrop(y, [200 130 190 110]);
 eyesW = imcrop(W, [200 130 190 110]);
-eyesTV = imcrop(tv, [200 130 190 110]);
 eyesLM = imcrop(lm, [200 130 190 110]);
 eyesIW = imcrop(iW, [200 130 190 110]);
 eyesT = imcrop(T, [200 130 190 110]);
@@ -167,10 +142,6 @@ export_fig barbara_face_eyes_eccv3ker_nvar10m5.png;
 figure();
 imshow(eyesW);
 export_fig barbara_face_eyes_Wiener_eccv3ker_nvar10m5.png;
-
-figure();
-imshow(eyesTV);
-export_fig barbara_face_eyes_tv_10K_eccv3ker_nvar10m5.png;
 
 figure();
 imshow(eyesLM);

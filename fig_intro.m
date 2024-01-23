@@ -45,13 +45,6 @@ W = g(y);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Fortunato 
-addpath('./sota_comparisons/non_blind/Fortunato/'); 
-wev   = [0.001, 20, 0.033, 0.05]; 
-fto = Fortunato(y, h, wev); 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % phase corrected VC
 Tc = pcVC(F, y);
 
@@ -76,10 +69,6 @@ export_fig barbara_face_Dong_ker2_nvar10m4.png;
 figure();
 imshow(W);
 export_fig barbara_face_Wiener_ker2_nvar10m4.png;
-
-figure();
-imshow(fto);
-export_fig barbara_face_Fortunato_ker2_nvar10m4.png;
 
 figure();
 imshow(Tc);
