@@ -49,27 +49,26 @@ W = g(y);
 Tc = pcVC(F, y);
 
 
-addpath('./export_fig');
 figure();
 imshow(xs); 
-export_fig barbara_face.png
+title('Original image');
 
 figure();
 imshow(y);
-export_fig barbara_face_ker2_nvar10m4.png
+title('Blurred image');
 
 figure();
 imshow(T);
-export_fig barbara_face_Tao_ker2_nvar10m4.png;
+title('Tao');
 
 figure();
 imshow(D);
-export_fig barbara_face_Dong_ker2_nvar10m4.png;
+title('Dong');
 
 figure();
 imshow(W);
-export_fig barbara_face_Wiener_ker2_nvar10m4.png;
+title('Wiener');
 
 figure();
 imshow(Tc);
-export_fig barbara_face_Tao_corrected_ker2_nvar10m4.png;
+title('pcVC');
