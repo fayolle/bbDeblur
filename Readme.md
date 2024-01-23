@@ -2,10 +2,10 @@
 MATLAB code implementing the five reverse filtering (or defiltering) schemes for noisy image deblurring described in the following [paper](https://www.sciencedirect.com/science/article/pii/S0923596522001242). 
 
 ## Examples 
-Examples of use are shown in the files ```fig_color.m```, ```fig_eccv3.m```, ..., which were used to generate the images in the paper. 
+Examples of use are shown in the demo scripts ```demo.m```, ```demo_color.m```, ... 
 
 ## Dependencies 
-Some of the functionalities rely on Mathwork's deep learning toolbox (the function ```denoise``` and the scripts calling it). 
+The optional function ```denoise``` relies on Mathwork's deep learning toolbox. 
 
 ## Notes
 See also the Python implementation in this [repo](https://github.com/fayolle/bbDeblur_py). 
