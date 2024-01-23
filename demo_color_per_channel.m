@@ -35,10 +35,9 @@ dfLr = aL(F, yr, dfl_opts); % approximate Landweber
 dfLg = aL(F, yg, dfl_opts);
 dfLb = aL(F, yb, dfl_opts);
 
-addpath('./export_fig');
 figure();
 imshow(xs);
-export_fig starfish.png;
+title('Original image');
 
 figure();
 y = xs;
@@ -46,7 +45,7 @@ y(:,:,1) = yr;
 y(:,:,2) = yg;
 y(:,:,3) = yb;
 imshow(y);
-export_fig starfish_ker2_nvar10m5_per_channel.png;
+title('Blurred image');
 fprintf("PSNR of blurred: %f\n", psnr(y, xs));
 
 figure();
@@ -55,7 +54,7 @@ lm(:,:,1) = lmr;
 lm(:,:,2) = lmg;
 lm(:,:,3) = lmb;
 imshow(lm);
-export_fig starfish_LM_100_ker2_nvar10m5_per_channel.png;
+title('LM');
 fprintf("PSNR of modified LM: %f\n", psnr(lm, xs));
 
 figure();
@@ -64,7 +63,7 @@ W(:,:,1) = Wr;
 W(:,:,2) = Wg; 
 W(:,:,3) = Wb; 
 imshow(W);
-export_fig starfish_iterWiener_100_ker2_nvar10m5_per_channel.png;
+title('Modified Wiener');
 fprintf("PSNR of modified Wiener: %f\n", psnr(W, xs));
 
 figure(); 
@@ -73,12 +72,12 @@ dfL(:,:,1) = dfLr;
 dfL(:,:,2) = dfLg;
 dfL(:,:,3) = dfLb;
 imshow(dfL);
-export_fig starfish_dfL_500_ker2_nvar10m5_per_channel.png;
+title('Approx. Landweber');
 fprintf("PSNR of approximate Landweber: %f\n", psnr(dfL, xs));
 
 
 % Parrot
-close all;
+%close all;
 clear;
 %clc;
 
@@ -115,10 +114,9 @@ dfLg = aL(F, yg, dfl_opts);
 dfLb = aL(F, yb, dfl_opts);
 
 
-addpath('./export_fig');
 figure();
 imshow(xs);
-export_fig parrot.png;
+title('Original image');
 
 figure();
 y = xs;
@@ -126,7 +124,7 @@ y(:,:,1) = yr;
 y(:,:,2) = yg;
 y(:,:,3) = yb;
 imshow(y);
-export_fig parrot_ker2_nvar10m5_per_channel.png;
+title('Blurred image');
 fprintf("PSNR of blurred: %f\n", psnr(y, xs));
 
 figure();
@@ -135,7 +133,7 @@ lm(:,:,1) = lmr;
 lm(:,:,2) = lmg;
 lm(:,:,3) = lmb;
 imshow(lm);
-export_fig parrot_LM_100_ker2_nvar10m5_per_channel.png;
+title('LM');
 fprintf("PSNR of modified LM: %f\n", psnr(lm, xs));
 
 figure();
@@ -143,8 +141,8 @@ W = xs;
 W(:,:,1) = Wr; 
 W(:,:,2) = Wg; 
 W(:,:,3) = Wb; 
-imshow(W);
-export_fig parrot_iterWiener_100_ker2_nvar10m5_per_channel.png;
+imshow(W); 
+title('Modified Wiener');
 fprintf("PSNR of modified Wiener: %f\n", psnr(W, xs));
 
 figure();
@@ -153,5 +151,5 @@ dfL(:,:,1) = dfLr;
 dfL(:,:,2) = dfLg;
 dfL(:,:,3) = dfLb;
 imshow(dfL);
-export_fig parrot_dfL_500_ker2_nvar10m5_per_channel.png;
+title('Approx. Landweber');
 fprintf("PSNR of approximate Landweber: %f\n", psnr(dfL, xs));

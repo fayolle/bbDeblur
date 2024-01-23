@@ -27,34 +27,33 @@ dfl_opts.maxiter = 500; % follows the paper
 dfL = aL(F, y, dfl_opts); % approximate Landweber 
 
 
-addpath('./export_fig');
 figure();
 imshow(xs);
-export_fig starfish.png;
+title('Input image'); 
 
 figure();
 imshow(y);
-export_fig starfish_ker2_nvar10m5.png;
+title('Blurred image');
 fprintf("PSNR of blurred: %f\n", psnr(y, xs));
 
 figure();
 imshow(lm);
-export_fig starfish_LM_100_ker2_nvar10m5.png;
+title('LM');
 fprintf("PSNR of modified LM: %f\n", psnr(lm, xs));
 
 figure();
 imshow(W);
-export_fig starfish_iterWiener_100_ker2_nvar10m5.png;
+title('Modified Wiener');
 fprintf("PSNR of modified Wiener: %f\n", psnr(W, xs));
 
 figure(); 
 imshow(dfL);
-export_fig starfish_dfL_500_ker2_nvar10m5.png;
+title('Approx. Landweber');
 fprintf("PSNR of approximate Landweber: %f\n", psnr(dfL, xs));
 
 
 % Parrot 
-close all; 
+%close all; 
 clear; 
 %clc;
 
@@ -82,27 +81,26 @@ dfl_opts.maxiter = 500; % follows the paper
 dfL = aL(F, y, dfl_opts); % approximate Landweber 
 
 
-addpath('./export_fig');
 figure();
 imshow(xs);
-export_fig parrot.png;
+title('Input image');
 
 figure();
 imshow(y);
-export_fig parrot_ker2_nvar10m5.png;
+title('Blurred image');
 fprintf("PSNR of blurred: %f\n", psnr(y, xs));
 
 figure();
 imshow(lm);
-export_fig parrot_LM_100_ker2_nvar10m5.png;
+title('LM');
 fprintf("PSNR of modified LM: %f\n", psnr(lm, xs));
 
 figure();
 imshow(W);
-export_fig parrot_iterWiener_100_ker2_nvar10m5.png;
+title('Modified Wiener');
 fprintf("PSNR of modified Wiener: %f\n", psnr(W, xs));
 
 figure();
 imshow(dfL);
-export_fig parrot_dfL_500_ker2_nvar10m5.png;
+title('Approx. Landweber');
 fprintf("PSNR of approximate Landweber: %f\n", psnr(dfL, xs));
