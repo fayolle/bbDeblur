@@ -5,7 +5,7 @@ MATLAB code implementing the five reverse filtering (or defiltering) schemes for
 Examples of use are shown in the demo scripts ```demo.m```, ```demo_color.m```, ... 
 
 ## Dependencies 
-The optional function ```denoise``` relies on Mathwork's deep learning toolbox. 
+The examples depend on the Image Processing Toolbox (for ```psf2otf```, for example). The optional function ```denoise``` relies on the Deep Learning Toolbox. 
 
 ## Notes
 See also the Python implementation in this [repo](https://github.com/fayolle/bbDeblur_py). 
